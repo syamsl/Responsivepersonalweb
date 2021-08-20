@@ -1,0 +1,16 @@
+.ads{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+.card-img{
+    width: 100%;
+    height: 13vw;
+    object-fit: cover;
+}
+
+.img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+  }
+
