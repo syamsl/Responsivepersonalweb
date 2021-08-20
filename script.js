@@ -44,7 +44,7 @@ $(document).ready(function(){
 
     $("#valmail").blur(function(){
         var mail=this.value;
-        var mailRegex = /^[A-Za-z0-9_]+@[a-z]+.[a-z]+$/;
+        var mailRegex = /^[A-Za-z0-9_.]+@[a-z]+.[a-z]+$/;
         if(!mail.match(mailRegex)){
             mailcheck=false;
             $("#mailerror").text("Invalid mail")
