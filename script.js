@@ -5,6 +5,13 @@ let messagecheck=false
 
 
 $(document).ready(function(){
+    $("#valname").keypress(function(ev){
+        var keyName = ev.which;
+        
+        if(!(keyName!=8 && (keyName<48 || keyName>57))){
+            ev.preventDefault();
+        }
+    })
     $("#valname").keyup(function(){
 
         var text=this.value;
@@ -24,13 +31,17 @@ $(document).ready(function(){
         }
     })
 
+    $("#valphone").keypress(function(e){
+        var keyCode = e.which;
+        
+        if(!(keyCode!=8 && !(keyCode<48 || keyCode>57))){
+            e.preventDefault();
+        }
+    })
     $("#valphone").keyup(function(){
         var num=this.value;
         var numRegex = /^[0-9]+$/;
-        if(!num.match(numRegex)){
-            numcheck=false;
-            $("#numerror").text("Enter valid number")
-        }else if(num.length<10){
+        if(num.length<10){
             numcheck=false;
             $("#numerror").text("Enter 10 digits")
         }else if(num.length>10){
