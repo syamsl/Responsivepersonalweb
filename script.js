@@ -16,7 +16,10 @@ $(document).ready(function(){
 
         var text=this.value;
         var nameRegex = /^[A-Za-z ]+$/;
-        if(!text.match(nameRegex)){
+        if(text.charCodeAt(0)==32){
+            namecheck=false;
+            $("#nameerror").text("First character should not be a space")
+        }else if(!text.match(nameRegex)){
             namecheck=false;
             $("#nameerror").text("Enter valid name")
         }else if(text.length<3){
