@@ -27,9 +27,6 @@ $(document).ready(function(){
         }else if(text.length<3){
             namecheck=false;
             $("#nameerror").text("Enter name with more than 2 character")
-        }else if(text.includes("  ")){
-            namecheck=false;
-            $("#nameerror").text("Not more than one concecutive space")
         }else if(text.match(nameRegex)){
             namecheck=true;
             $("#nameerror").text("")
