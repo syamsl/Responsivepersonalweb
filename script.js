@@ -55,6 +55,14 @@ $(document).ready(function(){
         }
     })
 
+    $("#valmail").keypress(function(et){
+        var keyCode = et.which;
+        
+        if(keyCode==32){
+            et.preventDefault();
+        }
+    })
+
     $("#valmail").blur(function(){
         var mail=this.value;
         var mailRegex = /^[A-Za-z0-9_.+-]+@[A-Za-z0-9-]+.[A-Za-z0-9-]+$/;
