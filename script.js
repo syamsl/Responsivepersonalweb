@@ -7,8 +7,10 @@ let messagecheck=false
 $(document).ready(function(){
     $("#valname").keypress(function(ev){
         var keyName = ev.which;
+        let inp = this.value
+        let x = inp.length-1
         
-        if(!(keyName!=8 && (keyName<48 || keyName>57))){
+        if(!(keyName!=8 && (keyName<48 || keyName>57)) || (inp[x]==" " && keyName==" ")){
             ev.preventDefault();
         }
     })
@@ -37,7 +39,7 @@ $(document).ready(function(){
     $("#valphone").keypress(function(e){
         var keyCode = e.which;
         
-        if(!(keyCode!=8 && !(keyCode<48 || keyCode>57))){
+        if(!(keyCode!=8 && !(keyCode<48 || keyCode>57)) || this.value.length==10){
             e.preventDefault();
         }
     })
@@ -47,9 +49,6 @@ $(document).ready(function(){
         if(num.length<10){
             numcheck=false;
             $("#numerror").text("Enter 10 digits")
-        }else if(num.length>10){
-            numcheck=false;
-            $("#numerror").text("Enter only 10 digits")
         }else if(num.match(numRegex) && num.length==10){
             numcheck=true;
             $("#numerror").text("")
