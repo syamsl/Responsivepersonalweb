@@ -10,7 +10,7 @@ $(document).ready(function(){
         let inp = this.value
         let x = inp.length-1
         
-        if(!(keyName!=8 && (keyName<48 || keyName>57)) || (inp[x]==" " && keyName==" ")){
+        if(!(keyName!=8 && (keyName<48 || keyName>57)) || (inp[x]==" " && keyName==32)){
             ev.preventDefault();
         }
     })
