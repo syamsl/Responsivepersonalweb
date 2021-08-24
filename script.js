@@ -62,7 +62,7 @@ $(document).ready(function(){
 
     $("#valmail").blur(function(){
         var mail=this.value;
-        var mailRegex = /^[A-Za-z0-9_.+-]+@[A-Za-z0-9-]+.[A-Za-z0-9-]+$/;
+        var mailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if(!mail.match(mailRegex)){
             mailcheck=false;
             $("#mailerror").text("Invalid mail")
