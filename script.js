@@ -3,7 +3,9 @@ let numcheck=false
 let mailcheck=false
 let messagecheck=false
 
-
+$('.navbar-collapse a').click(function () {
+    $(".navbar-collapse").collapse('hide');
+});
 $(document).ready(function(){
     $("#valname").keypress(function(ev){
         var keyName = ev.which;
